@@ -18,8 +18,18 @@ class ChitterChallenge < Sinatra::Base
     redirect '/'
   end
 
-<<<<<<< HEAD
-=======
+  get '/login' do
+    erb :login
+  end
+
+  get '/home' do
+    erb :home
+  end
+
+  get '/fail' do
+    erb :fail
+  end
+
   post '/login/sign_up' do
     User.sign_up(su_user_name: params[:su_user_name], su_password: params[:su_password], su_email: params[:su_email])
     redirect '/login'
@@ -38,6 +48,5 @@ class ChitterChallenge < Sinatra::Base
     erb :'peep/new'
   end
 
->>>>>>> e6033382db8586423c233878792edc39b2185475
   run! if app_file == $0
 end

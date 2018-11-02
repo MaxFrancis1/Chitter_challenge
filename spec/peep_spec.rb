@@ -19,7 +19,7 @@ describe Peep do
   describe '#create' do
     it 'Adds a bookmark to our database' do
       peep = Peep.create(peep: "This is my first post to chitter", time: Time.now)
-      persisted_data = PG.connect(dbname: 'chitter_test').exec("SELECT * FROM peeps WHERE id = #{message.id};").to_a
+      persisted_data = PG.connect(dbname: 'Chitter_test').exec("SELECT * FROM peeps WHERE id = #{message.id};").to_a
 
       expect(peep).to be_a Peep
       expect(peep.id).to eq persisted_data.first['id']
